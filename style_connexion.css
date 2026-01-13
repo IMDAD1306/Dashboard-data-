@@ -1,0 +1,98 @@
+/* --- CONTENEUR PRINCIPAL --- */
+.login-container {
+    width: 90%;
+    max-width: 450px;
+    margin: 80px auto;
+    padding: 40px;
+    background: white; /* ✔️ avant c'était gris clair */
+    border-radius: 40px;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1); /* légère ombre pro */
+}
+
+/* --- TITRE --- */
+.login-container h2 {
+    color: #2A818A;
+    margin-bottom: 40px;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+/* --- LABELS --- */
+.login-container label {
+    display: block;
+    text-align: left;
+    font-size: 12px;
+    color: #6B7280; /* gris moderne */
+    margin-bottom: 6px;
+    margin-top: 15px;
+}
+
+/* --- CHAMPS INPUT --- */
+.login-container input {
+    width: 100%;
+    padding: 12px;
+    background: #F3F4F6; /* gris très clair pour lisibilité */
+    color: #111; /* texte sombre pour mieux voir */
+    border: 1px solid #D1D5DB; /* bord gris clair */
+    border-radius: 8px;
+    font-size: 14px;
+    outline: none;
+    transition: 0.3s;
+}
+
+.login-container input:focus {
+    border-color: #2A818A;
+    box-shadow: 0 0 6px rgba(42,129,138,0.3);
+}
+
+/* --- BOUTON --- */
+.login-container button {
+    width: 60%;
+    padding: 12px;
+    margin-top: 25px;
+    background: #2A818A;  /* bleu foncé */
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 16px;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.login-container button:hover {
+    background: #256F75;
+    transform: translateY(-2px);
+}
+
+/* --- LIEN INSCRIPTION --- */
+.login-container p {
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+.login-container a {
+    color: #007BFF;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.login-container a:hover {
+    text-decoration: underline;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 500px) {
+    .login-container {
+        margin-top: 20px;
+        border-radius: 20px;
+        width: 95%;
+        padding: 30px 20px;
+        min-height: auto;
+    }
+
+    .login-container button {
+        width: 80%;
+    }
+}

@@ -1,0 +1,235 @@
+/* Variables pour les couleurs */
+:root {
+ --couleur-primaire: #f4f4f4; /* Arrière-plan général très clair */
+ --couleur-secondaire: #ffffff; /* Arrière-plan du conteneur de chat */
+ --couleur-texte: #333; /* Texte foncé */
+ --couleur-accent: #368d8b; /* Vert-bleu pour le bouton Envoyer */
+ --couleur-resume-btn: #28a745; /* Vert pour le bouton Résumer */
+ --couleur-ai: #d8eded; /* Fond clair pour les messages IA */
+ --couleur-utilisateur: #e6e6e6; /* Fond pour les messages utilisateur */
+ --rayon-bordure: 12px;
+}
+
+/* 1. Style général du corps (CORRECTION pour aligner l'entête en haut) */
+body {
+ font-family: Arial, sans-serif;
+ background-color: var(--couleur-primaire);
+/* 1. Permet le Flexbox pour aligner les enfants */
+ display: flex; 
+ 
+ /* 2. CORRECTION : Empile l'entête et le chat verticalement */
+ flex-direction: column; 
+ 
+ /* 3. Ajustement : Le centrage horizontal est appliqué aux enfants */
+ align-items: center; /* ⬅️ Centre le .chat-container horizontalement */
+ 
+ min-height: 100vh;
+ margin: 0;
+ padding: 0;
+}
+
+/* 2. Conteneur principal */
+.chat-container {
+ background-color: var(--couleur-secondaire);
+ border-radius: var(--rayon-bordure);
+ box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+ width: 100%;
+ max-width: 600px;
+ display: flex;
+ flex-direction: column;
+ overflow: hidden;
+}
+
+/* 3. Titre */
+.chat-container h1 {
+ color: var(--couleur-accent); 
+ text-align: center;
+ padding: 20px;
+ margin: 0;
+ border-bottom: 1px solid #eee;
+ font-size: 1.8em;
+}
+
+/* 4. Historique du Chat */
+#historique-chat {
+ flex-grow: 1;
+ padding: 20px;
+ overflow-y: auto;
+ min-height: 300px;
+ max-height: 70vh;
+ display: flex;
+ flex-direction: column;
+ gap: 10px;
+}
+
+/* 5. Style des Messages */
+.message {
+ max-width: 100%;
+ padding: 10px 15px;
+ margin: 5px 0;
+ border-radius: 18px;
+ line-height: 1.5;
+ 
+ word-wrap: break-word; 
+ overflow-wrap: break-word;
+}
+
+/* Message de l'IA */
+.ai-message {
+ background-color: var(--couleur-ai);
+ color: var(--couleur-texte);
+ align-self: flex-start;
+ border-bottom-left-radius: 4px;
+}
+
+/* Message de l'utilisateur */
+.user-message {
+ background-color: var(--couleur-utilisateur);
+ color: var(--couleur-texte);
+ align-self: flex-end;
+border-bottom-right-radius: 4px;
+}
+
+/* ================================================= */
+/* 6. Zone de Saisie (Nouvelle structure avec TEXTAREA) */
+/* ================================================= */
+
+.input-area {
+ display: flex;
+ flex-direction: column; 
+ padding: 15px;
+ border-top: 1px solid #ddd;
+ background-color: #f9f9f9; 
+ border-bottom-left-radius: var(--rayon-bordure);
+ border-bottom-right-radius: var(--rayon-bordure);
+}
+
+/* Le champ de saisie élargi (TEXTAREA) */
+#question {
+ width: 100%; 
+ min-height: 100px; 
+ padding: 10px;
+ margin-bottom: 10px;
+ border: 1px solid #ccc;
+ border-radius: 8px;
+ resize: vertical;
+ font-size: 16px;
+ box-sizing: border-box; 
+ outline: none; 
+}
+
+#question:focus {
+ border-color: var(--couleur-accent);
+}
+
+/* Conteneur des boutons d'action */
+.boutons-actions {
+ display: flex;
+ justify-content: flex-end; 
+ gap: 10px;
+}
+
+/* Styles généraux des boutons d'action */
+.boutons-actions button {
+ padding: 10px 20px;
+ border: none;
+ border-radius: 8px;
+ cursor: pointer;
+ font-weight: bold;
+ transition: background-color 0.3s ease, opacity 0.3s ease;
+}
+
+/* Style du bouton Envoyer */
+#envoyer {
+ background-color: var(--couleur-accent);
+ color: white;
+}
+
+#envoyer:hover {
+background-color: #2b7472;
+}
+
+#envoyer {
+    display: none !important;
+}
+
+/* Style du bouton Résumer */
+.boutons-actions button[onclick="resumerTexte()"] {
+ background-color: var(--couleur-resume-btn); 
+ color: white;
+}
+
+.boutons-actions button[onclick="resumerTexte()"]:hover {
+ background-color: #1e7e34;
+}
+
+.voir-plus-btn {
+ all: unset; 
+ cursor: pointer;
+ font-size: 0.9em;
+ font-weight: bold;
+ color: var(--couleur-accent); 
+ 
+ margin-top: 5px;
+ align-self: flex-start;
+ display: flex;
+ align-items: center;
+ gap: 5px;
+ padding: 2px 0;
+}
+
+
+/* Style spécifique pour le bouton Classifier */
+#btn-classifier {
+    background-color: #ce85078b; /* Une couleur violette élégante */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Effet au survol */
+#btn-classifier:hover {
+    background-color: #04f2d6; /* Plus clair au survol */
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* Style quand le bouton est désactivé (pendant le chargement) */
+#btn-classifier:disabled {
+    background-color: #b2bec3;
+    cursor: not-allowed;
+    transform: none;
+}
+
+
+/* L'effet de survol (hover) d'un lien */
+.voir-plus-btn:hover {
+ text-decoration: underline;
+ opacity: 0.8;
+}
+
+/* Aligner le lien "Voir plus" du côté droit pour les messages utilisateur */
+.user-message .voir-plus-btn {
+ align-self: flex-end;
+}
+
+/* Style de l'icône de la flèche */
+.icone-fleche {
+ font-size: 0.7em;
+}
+
+/* Le texte masqué qui sera révélé */
+.message-cache {
+ white-space: pre-wrap; 
+ word-break: break-word;
+}
+
+

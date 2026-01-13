@@ -1,0 +1,12 @@
+{
+  "Appareils": [
+    "Réfrigérateur", 
+    "Lave-linge", 
+    "Ordinateur", 
+    "Éclairage LED", 
+    "Chauffage", 
+    "Climatisation"
+  ],
+  "Consommation_kWh": [45, 30, 15, 8, 120, 95],
+  "description": "Analyse de la consommation énergétique par appareil pour le mois de décembre."
+}

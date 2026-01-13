@@ -1,0 +1,144 @@
+/* --- GLOBAL PAGE STYLE --- */
+body {
+    font-family: "Arial", sans-serif;
+    background: #f4f6f9; /* Fond très clair */
+    margin: 0;
+    padding: 0;
+}
+
+/* --- TITLE --- */
+h2 {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 28px;
+    color: #00877a; /* Couleur du titre du chat */
+    font-weight: 600; /* Plus marqué */
+}
+/* --- FILE INPUT BUTTON --- */
+#fileInput {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px; /* Plus de padding */
+    border: 2px solid #00877a; /* Bordure assortie */
+    border-radius: 8px; 
+    cursor: pointer;
+    transition: 0.3s;
+    background: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+#fileInput:hover {
+    background: #f0f0f0;
+    border-color: #006f65;
+}
+
+/* --- GRAPH BUTTON (Harmonisé) --- */
+
+/* --- TABLE CONTAINER --- */
+.table-container {
+    width: 90%;
+    margin: 25px auto;
+    border-radius: 12px; /* Plus arrondi */
+    overflow: hidden;
+    background: white;
+    padding: 0; /* Suppression du padding interne pour que la table utilise tout l'espace */
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.1); /* Ombre plus prononcée */
+}
+
+/* --- TABLE STYLE --- */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table th {
+    background: #00877a; /* L'en-tête utilise la couleur principale */
+    color: white;
+    padding: 14px;
+    font-size: 16px;
+    text-align: left; /* Meilleure lisibilité */
+}
+
+.table td {
+    padding: 12px;
+    border-bottom: 1px solid #eee; /* Lignes de séparation plus claires */
+}
+
+.table tbody tr:hover {
+    background: #f1f8f7; /* Le survol utilise le fond doux du chat IA */
+}
+
+/* Style spécifique pour la première ligne du corps (si nécessaire) */
+.table tbody tr:first-child td {
+    border-top: none;
+}
+
+/* --- BUTTONS DANS LE TABLEAU (Dynamiquement créés par JS) --- */
+.btn-voir-graphique,
+.btn-supprimer {
+    padding: 8px 15px;
+    cursor: pointer;
+    border: none;
+    border-radius: 6px;
+    font-weight: 500;
+    margin-right: 5px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+/* Style du bouton "Voir Graphique" */
+.btn-voir-graphique {
+    background-color: #4682b4; /* ⬅️ Bleu Acier */
+    color: white;
+    box-shadow: 0 2px #3a6f9c; /* Ombre plus foncée */
+}
+
+.btn-voir-graphique:hover {
+    background-color: #3a6f9c;
+    box-shadow: 0 1px #315e85;
+    transform: translateY(1px); /* Effet de pression */
+}
+
+/* Style du bouton "Supprimer" */
+.btn-supprimer {
+    background-color: #dc3545; /* Rouge standard */
+    color: white;
+    box-shadow: 0 2px #b02735;
+}
+
+.btn-supprimer:hover {
+    background-color: #c82333;
+    box-shadow: 0 1px #801822;
+    transform: translateY(1px);
+}
+
+
+
+/* --- STYLE 1 : DÉFINIT LA TAILLE MAXIMALE ET LE CADRE (700px) --- */
+.graphique-cadre {
+    max-width: 700px; 
+    width: 90%;      
+    margin: 40px auto; 
+    padding: 20px;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15); 
+}
+
+/* Centre le texte d'analyse au-dessus du graphique */
+#texteGraphique {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-size: 1.1em;
+    width: 100%;
+    color: #333; /* Un gris foncé pour la lisibilité */
+}
+
+/* Style pour les balises <b> que tu as dans ton JS */
+#texteGraphique b {
+    color: #00877a; /* Rappel de ta couleur principale sur les mots importants */
+}

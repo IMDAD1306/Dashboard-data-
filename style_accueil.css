@@ -1,0 +1,198 @@
+/* --- Variables et Réinitialisation de Base --- */
+:root {
+    --primary-text-color: #333;
+    --secondary-text-color: #fff;
+    --header-bg: #000; /* Barre de navigation noire */
+    --card-bg: #fff;
+    --footer-bg: #f4f4f4;
+    --box-shadow-light: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0; /* GARANTIT QU'AUCUNE MARGE EXTERNE NE POUSSE LE CONTENU */
+    padding: 0; /* GARANTIT QU'AUCUN PADDING INTERNE NE POUSSE LE CONTENU */
+    background-color: #fff;
+    color: var(--primary-text-color);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    /* LIGNE CORRIGÉE : Suppression du padding-top qui repoussait la barre */
+    /* padding-top: 5px; */ 
+}
+
+/* --- 1. Barre de Navigation (Header) --- */
+.navbar {
+    background-color: var(--header-bg);
+    color: var(--secondary-text-color);
+    padding: 5px 25px;
+    display: flex;
+    justify-content: space-between; /* logo à gauche / menu à droite */
+    align-items: center; /* assure l'alignement horizontal */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    white-space: nowrap; /* ⚠️ Empêche les liens de passer à la ligne */
+}
+
+.nav-links {
+    display: flex;          /* garde les liens sur une ligne */
+    gap: 25px;              /* espace entre les liens (beaucoup plus visible) */
+    margin-left: 40px;      /* décale clairement le menu */
+}
+
+
+
+.logo {
+    width: 100%;
+    text-align: left;
+    margin-top: 5px;
+}
+
+.logo img {
+    width: 200px;
+}
+
+
+
+
+.nav-links a {
+    color: var(--secondary-text-color);
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 1em;
+    padding: 5px 0;
+    transition: color 0.3s, border-bottom 0.3s;
+}
+/* ... Le reste du code est conservé ... */
+
+.nav-links a:hover, .nav-links a.active {
+    color: #00bcd4; /* Couleur cyan */
+    border-bottom: 2px solid #00bcd4;
+}
+
+.logout-btn {
+    background-color: #00bcd4;
+    color: var(--secondary-text-color);
+    border: none;
+    padding: 10px 15px;
+    font-size: 1.2em;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.logout-btn:hover {
+    background-color: #008c99;
+}
+
+/* --- Contenu Principal --- */
+.main-content {
+    flex-grow: 1;
+}
+
+/* --- 2. Bannière --- */
+.banner {
+    width: 100%;
+    height: 200px;
+    /* Utilisez votre image en tant qu'arrière-plan */
+    background: url('../images/logo2.png') no-repeat center center/cover;
+    /* Pour reproduire l'image fournie, on utilise un placeholder */
+    background-color: #000; 
+    border-bottom: 3px solid #00bcd4;
+}
+
+/* --- 3. Section de Bienvenue --- */
+.welcome-section {
+    max-width: 800px;
+    margin: 40px auto 30px auto;
+    text-align: center;
+    font-size: 1.2em;
+    font-style: italic;
+}
+
+/* --- 4. Grille d'Options (Les Cartes) --- */
+.options-grid {
+    display: flex;
+    justify-content: center;
+    gap: 80px; /* Espace entre les deux cartes */
+    padding: 20px;
+    margin-bottom: 60px;
+}
+
+.option-card {
+    cursor: pointer;
+    text-align: center;
+    width: 250px;
+    background-color: var(--card-bg);
+    border-radius: 15px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.option-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
+}
+
+.icon-placeholder {
+    height: 200px; /* Taille de la zone de l'icône */
+    border-radius: 15px 15px 0 0;
+    /* Simule l'effet d'image de la capture */
+    background-size: cover;
+    background-position: center;
+    border-bottom: 1px solid #ddd;
+    /* Les images spécifiques devraient être chargées ici */
+}
+
+/* Simulation des images de fond des cartes (si elles sont en CSS) */
+.ai-icon {
+    /* Mettez ici le lien vers votre image d'analyse IA */
+    background: url('../images/IA.png') no-repeat center center/cover;
+    background-color: #cceeff; /* Couleur de fond pâle */
+}
+
+.dashboard-icon {
+    /* Mettez ici le lien vers votre image de tableau de bord */
+    background: url('../images/dashboard.png') no-repeat center center/cover;
+    background-color: #f0f8ff; /* Couleur de fond pâle */
+}
+
+
+.card-label {
+    background-color: #000;
+    color: var(--secondary-text-color);
+    padding: 15px 0;
+    font-size: 1.1em;
+    font-weight: bold;
+    border-radius: 0 0 15px 15px;
+}
+
+/* --- 5. Pied de Page (Footer) --- */
+.footer {
+    width: 100%;
+    text-align: center;
+    padding: 15px 0;
+    background-color: var(--footer-bg);
+    border-top: 1px solid #ddd;
+    color: #666;
+    font-size: 0.9em;
+}
+
+/* --- Responsive pour les petits écrans --- */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        text-align: center;
+    }
+    .nav-links {
+        padding: 10px 0;
+    }
+    .options-grid {
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+    }
+    .option-card {
+        width: 80%; /* Plus large sur mobile */
+    }
+}

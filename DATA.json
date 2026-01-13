@@ -1,0 +1,25 @@
+{
+  "mois": ["Janvier", "Février", "Mars", "Avril", "Mai"],
+  "ventes": [1200, 1900, 1500, 2100, 1800],
+  "description": "Rapport de performance du premier semestre 2025.",
+  "commentaires_clients": [
+    {
+      "id": 1,
+      "client": "Imdad",
+      "avis": "L'interface est super fluide, mais j'aimerais plus d'options de couleurs.",
+      "note": 4
+    },
+    {
+      "id": 2,
+      "client": "Alice",
+      "avis": "La classification automatique me fait gagner un temps fou sur mes rapports !",
+      "note": 5
+    },
+    {
+      "id": 3,
+      "client": "Jean",
+      "avis": "Problème lors de l'upload du fichier hier, mais c'est réglé aujourd'hui.",
+      "note": 3
+    }
+  ]
+}
