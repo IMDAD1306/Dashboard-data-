@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once 'model.php'; // notre modèle avec toutes les fonctions
+require_once 'model.php'; 
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $email = trim($_POST['email']);
@@ -61,3 +61,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 </body>
 </html>
+
