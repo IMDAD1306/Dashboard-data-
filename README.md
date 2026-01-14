@@ -32,7 +32,7 @@ Elle permet de résumer des textes, de les classifier et d’en extraire des inf
 
 
 ### ▶️ Vidéo démonstration des fonctionnalités
-👉 https://youtu.be/XXXXXXXXXXX
+[👉 https://youtu.be](https://youtu.be/GPCNIWmbSWI?si=Zjn5P3mX5J0wJh_a)
 
 *(Remplace les liens par tes propres vidéos)*
 
